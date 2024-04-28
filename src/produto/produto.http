@@ -1,0 +1,29 @@
+### LIST
+
+#GET
+GET http://localhost:3020/produto/
+
+### CREATE
+POST http://localhost:3020/produto
+Content-Type: application/json
+
+{
+    "titulo": "Casa Espaçosa",
+    "descricao": "Uma casa espaçosa com vista para o mar",
+    "quartos": "3",
+    "suites": "2",
+    "banheiros": "2",
+    "areaUtil": "200",
+    "areaTotal": "300",
+    "localizacao": "Praia",
+    "imagem": "casa.jpg",
+    "imagem1": "casa1.jpg",
+    "imagem2": "casa2.jpg",
+    "imagem3": "casa3.jpg"
+}
+
+### UPDATE
+PATCH http://localhost:3000/unidades
+
+### DELETE
+DELETE http://localhost:3020/produto/
