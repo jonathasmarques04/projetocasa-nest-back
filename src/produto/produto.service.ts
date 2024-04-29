@@ -12,7 +12,6 @@ export class ProdutoService {
     private readonly repository: Repository<Produto>,
   ) {}
 
-
   create(createProdutoDto: CreateProdutoDto) {
     const produto = this.repository.create(createProdutoDto);
     return this.repository.save(produto);
@@ -22,8 +21,8 @@ export class ProdutoService {
     return this.repository.find();
   }
 
-  findOne(id) {
-    return this.repository.findOneBy(id);
+  findOne(id: string) {
+    return this.repository.findOneBy({ idProduto: id });
   }
 
   async update(id, updateProdutoDto: UpdateProdutoDto) {

@@ -1,7 +1,8 @@
 ### LIST
 
 #GET
-GET http://localhost:3020/produto/
+GET http://localhost:3020/produto/5
+
 
 ### CREATE
 POST http://localhost:3020/produto
@@ -15,15 +16,25 @@ Content-Type: application/json
     "banheiros": "2",
     "areaUtil": "200",
     "areaTotal": "300",
+    "valor": "500000",
     "localizacao": "Praia",
     "imagem": "casa.jpg",
     "imagem1": "casa1.jpg",
     "imagem2": "casa2.jpg",
-    "imagem3": "casa3.jpg"
+    "imagem3": "casa3.jpg",
+    "imagem4": "casa4.jpg",
+    "imagem5": "casa5.jpg",
+    "imagem6": "casa6.jpg",
+    "imagem7": "casa7.jpg",
+    "imagem8": "casa8.jpg",
+    "imagem9": "casa9.jpg",
+    "imagem10": "casa10.jpg",
+    "imagem11": "casa11.jpg",
+    "imagem12": "casa12.jpg"
 }
 
 ### UPDATE
 PATCH http://localhost:3000/unidades
 
 ### DELETE
-DELETE http://localhost:3020/produto/
+DELETE http://localhost:3020/produto

@@ -1,14 +1,14 @@
 ### LIST
 
 #GET
-GET http://localhost:3020/usuario/
+GET http://localhost:3020/usuario/4
 
 ### CREATE
 POST http://localhost:3020/usuario/
 Content-Type: application/json
 
 {
-    "email": "admin",
+    "email": "gabriel",
     "password": "1020302014",
     "logado": "1" 
 }

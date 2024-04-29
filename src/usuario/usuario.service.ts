@@ -12,7 +12,6 @@ export class UsuarioService {
     private readonly repository: Repository<Usuario>,
   ) {}
 
-
   create(createUsuarioDto: CreateUsuarioDto) {
     const usuario = this.repository.create(createUsuarioDto);
     return this.repository.save(usuario);
@@ -22,23 +21,23 @@ export class UsuarioService {
     return this.repository.find();
   }
 
-  findOne(id) {
-    return this.repository.findOneBy(id);
+  findOne(id: string) {
+    return this.repository.findOneBy({ idUsuario: id });
   }
 
   async findOneByEmail(email: string): Promise<Usuario> {
     return this.repository.findOne({ where: { email } });
   }
 
-  async update(id, updateUsuarioDto: UpdateUsuarioDto) {
-    const usuario = await this.repository.findOneBy(id);
+  async update(idUsuario, updateUsuarioDto: UpdateUsuarioDto) {
+    const usuario = await this.repository.findOneBy(idUsuario);
     if (!usuario) return null;
     this.repository.merge(usuario, updateUsuarioDto);
     return this.repository.save(usuario);
   }
 
-  async remove(id) {
-    const usuario = await this.repository.findOneBy(id);
+  async remove(idUsuario) {
+    const usuario = await this.repository.findOneBy(idUsuario);
     if (!usuario) return null;
     return this.repository.remove(usuario);
   }

@@ -44,12 +44,10 @@ export class UsuarioController {
           .json({ error: 'Senha incorreta!' });
       }
 
-      return res
-        .status(HttpStatus.OK)
-        .json({
-          message: 'Email válido',
-          usuario: usuarioExistente,
-        });
+      return res.status(HttpStatus.OK).json({
+        message: 'Email válido',
+        usuario: usuarioExistente,
+      });
     } catch (error) {
       return res
         .status(HttpStatus.INTERNAL_SERVER_ERROR)
@@ -63,17 +61,17 @@ export class UsuarioController {
   }
 
   @Get(':idUsuario')
-  findOne(@Param('id') id: string) {
-    return this.usuarioService.findOne(+id);
+  findOne(@Param('idUsuario') id: string) {
+    return this.usuarioService.findOne(id);
   }
 
   @Patch(':idUsuario')
   update(@Param('id') id: string, @Body() updateUsuarioDto: UpdateUsuarioDto) {
-    return this.usuarioService.update(+id, updateUsuarioDto);
+    return this.usuarioService.update(id, updateUsuarioDto);
   }
 
   @Delete(':idUsuario')
   remove(@Param('id') id: string) {
-    return this.usuarioService.remove(+id);
+    return this.usuarioService.remove(id);
   }
 }

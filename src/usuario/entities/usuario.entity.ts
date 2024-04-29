@@ -1,9 +1,9 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity('usuarios')
+@Entity('usuario')
 export class Usuario {
   @PrimaryGeneratedColumn()
-  idUsuario: number;
+  idUsuario: string;
 
   @Column()
   email: string;
