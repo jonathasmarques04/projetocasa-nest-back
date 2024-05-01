@@ -66,12 +66,12 @@ export class UsuarioController {
   }
 
   @Patch(':idUsuario')
-  update(@Param('id') id: string, @Body() updateUsuarioDto: UpdateUsuarioDto) {
+  update(@Param('idUsuario') id, @Body() updateUsuarioDto: UpdateUsuarioDto) {
     return this.usuarioService.update(id, updateUsuarioDto);
   }
 
   @Delete(':idUsuario')
-  remove(@Param('id') id: string) {
+  remove(@Param('idUsuario') id: string) {
     return this.usuarioService.remove(id);
   }
 }

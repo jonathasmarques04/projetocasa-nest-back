@@ -29,15 +29,15 @@ export class UsuarioService {
     return this.repository.findOne({ where: { email } });
   }
 
-  async update(idUsuario, updateUsuarioDto: UpdateUsuarioDto) {
-    const usuario = await this.repository.findOneBy(idUsuario);
+  async update(id: string, updateUsuarioDto: UpdateUsuarioDto) {
+    const usuario = await this.repository.findOneBy({ idUsuario: id });
     if (!usuario) return null;
     this.repository.merge(usuario, updateUsuarioDto);
     return this.repository.save(usuario);
   }
 
-  async remove(idUsuario) {
-    const usuario = await this.repository.findOneBy(idUsuario);
+  async remove(id: string) {
+    const usuario = await this.repository.findOneBy({ idUsuario: id });
     if (!usuario) return null;
     return this.repository.remove(usuario);
   }
