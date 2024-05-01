@@ -32,8 +32,8 @@ export class ProdutoService {
     return this.repository.save(produto);
   }
 
-  async remove(id) {
-    const produto = await this.repository.findOneBy(id);
+  async remove(id: string) {
+    const produto = await this.repository.findOneBy({ idProduto: id });
     if (!produto) return null;
     return this.repository.remove(produto);
   }
