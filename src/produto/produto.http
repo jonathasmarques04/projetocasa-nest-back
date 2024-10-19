@@ -1,7 +1,7 @@
 ### LIST
 
 #GET
-GET http://localhost:3020/produto/5
+GET http://localhost:3020/produto/
 
 
 ### CREATE
@@ -37,4 +37,4 @@ Content-Type: application/json
 PATCH http://localhost:3000/unidades
 
 ### DELETE
-DELETE http://localhost:3020/produto
+DELETE http://localhost:3020/produto/4

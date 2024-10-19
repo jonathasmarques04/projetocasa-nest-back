@@ -34,7 +34,9 @@ export class ProdutoService {
 
   async remove(id: string) {
     const produto = await this.repository.findOneBy({ idProduto: id });
-    if (!produto) return null;
+    if (!produto){
+      return { success: false, message: 'Produto não encontrado!' };
+    }
     return this.repository.remove(produto);
   }
 }

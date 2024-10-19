@@ -17,4 +17,4 @@ Content-Type: application/json
 PATCH http://localhost:3000/unidades
 
 ### DELETE
-DELETE http://localhost:3020/usuario/4
+DELETE http://localhost:3020/usuario/7
